@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import FlashCardList from './FlashCardList'
+import axios from 'axios'
 
 function App() {
   const [flashCards, setFlashCards] = useState(SAMPLE_FLASHCARDS)
