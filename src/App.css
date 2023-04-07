@@ -14,7 +14,7 @@ body {
     width: 220px;
     transition: 150ms;
     cursor: pointer;
-    transform: perspective(100px) rotateY(var(--rotate-y, 0))
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0))
     translateY(var(--translate-y, 0));
 }
 
