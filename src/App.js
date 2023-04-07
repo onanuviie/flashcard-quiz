@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './App.css'
 import FlashCardList from './FlashCardList'
 import axios from 'axios'
 
 function App() {
   const [flashCards, setFlashCards] = useState(SAMPLE_FLASHCARDS)
+
+  const categoryEl = useRef()
 
   useEffect(() => {
     axios
@@ -32,11 +34,23 @@ function App() {
     return textArea.value
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+  }
 
   return (
+    <>
+    <form className = "header" onSubmit = {handleSubmit}>
+      <div className = "form-group">
+        <label htmlForm = "Category">Category</label>
+        <select id = "category" ref = {categoryEl}>
+        </select>
+      </div>
+    </form>
     <div className = "container">
     <FlashCardList flashCards = {flashCards}/>
     </div>
+    </>
   )
 }
 
